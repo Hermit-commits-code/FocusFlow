@@ -25,7 +25,7 @@ FocusFlow is designed specifically for people with ADHD, autism, dyslexia, and o
 This is the **first stable release** of FocusFlow! Sprint 1 goals achieved:
 
 - ✅ **Complete Core Features**: Distraction blocking, focus mode, and Pomodoro timer
-- ✅ **Cross-Browser Support**: Works seamlessly in Chrome and Firefox  
+- ✅ **Cross-Browser Support**: Works seamlessly in Chrome and Firefox
 - ✅ **Accessibility Foundation**: WCAG 2.1 AA compliant with neurodiverse-friendly design
 - ✅ **Professional Build System**: Optimized for performance and maintainability
 - ✅ **Comprehensive Documentation**: Ready for community contributions
@@ -61,14 +61,15 @@ This is the **first stable release** of FocusFlow! Sprint 1 goals achieved:
 
 #### From Browser Store (Coming Soon)
 
-- **Chrome**: [Install from Chrome Web Store](https://chrome.google.com/webstore) - *Submitting for review*
-- **Firefox**: [Install from Firefox Add-ons](https://addons.mozilla.org) - *Submitting for review*
+- **Chrome**: [Install from Chrome Web Store](https://chrome.google.com/webstore) - _Submitting for review_
+- **Firefox**: [Install from Firefox Add-ons](https://addons.mozilla.org) - _Submitting for review_
 
 #### Stable Release Installation (v1.0.0)
 
 For immediate use, install the stable v1.0.0 release:
 
 1. **Download the latest release**
+
    ```bash
    wget https://github.com/yourusername/focusflow-extension/releases/download/v1.0.0/focusflow-v1.0.0.zip
    unzip focusflow-v1.0.0.zip

@@ -16,6 +16,8 @@ const Popup = () => {
     type: "work", // 'work' or 'break'
   });
 
+  const [saveStatus, setSaveStatus] = useState("");
+
   useEffect(() => {
     // Load current settings from storage
     chrome.storage.sync.get(["focusFlow"], (result) => {
@@ -25,37 +27,58 @@ const Popup = () => {
     });
 
     // Get timer status from background script
-    chrome.runtime.sendMessage({ action: "getTimerStatus" }, (response) => {
-      if (response) {
-        setTimerStatus(response);
-      }
-    });
+    const fetchTimerStatus = () => {
+      chrome.runtime.sendMessage({ action: "getTimerStatus" }, (response) => {
+        if (response) {
+          setTimerStatus(response);
+        }
+      });
+    };
+    fetchTimerStatus();
+    const interval = setInterval(fetchTimerStatus, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   const updateSetting = async (key, value) => {
     const newSettings = { ...settings, [key]: value };
     setSettings(newSettings);
-
-    // Save to storage
     await chrome.storage.sync.set({ focusFlow: newSettings });
-
-    // Send message to content script
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      chrome.tabs.sendMessage(tabs[0].id, {
-        action: "updateSettings",
-        settings: newSettings,
-      });
+      if (tabs.length === 0) return;
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        {
+          action: "updateSettings",
+          settings: newSettings,
+        },
+        (response) => {
+          if (chrome.runtime.lastError) {
+            setSaveStatus(
+              "Content script not available on this page. Some features may not work."
+            );
+            setTimeout(() => setSaveStatus(""), 4000);
+          }
+        }
+      );
     });
   };
 
   const startBreakTimer = () => {
-    chrome.runtime.sendMessage({ action: "startBreakTimer" });
-    setTimerStatus((prev) => ({ ...prev, isActive: true }));
+    chrome.runtime.sendMessage({ action: "startBreakTimer" }, () => {
+      // Refresh timer status after starting
+      chrome.runtime.sendMessage({ action: "getTimerStatus" }, (response) => {
+        if (response) setTimerStatus(response);
+      });
+    });
   };
 
   const stopTimer = () => {
-    chrome.runtime.sendMessage({ action: "stopTimer" });
-    setTimerStatus((prev) => ({ ...prev, isActive: false }));
+    chrome.runtime.sendMessage({ action: "stopTimer" }, () => {
+      // Refresh timer status after stopping
+      chrome.runtime.sendMessage({ action: "getTimerStatus" }, (response) => {
+        if (response) setTimerStatus(response);
+      });
+    });
   };
 
   const formatTime = (seconds) => {
@@ -168,6 +191,9 @@ const Popup = () => {
             : "💤 Inactive"}
         </span>
       </div>
+
+      {/* Save Status Message */}
+      {saveStatus && <div className="popup-status">{saveStatus}</div>}
     </div>
   );
 };

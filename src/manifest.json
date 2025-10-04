@@ -1,18 +1,11 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "FocusFlow - Neurodiverse-Friendly Browsing",
   "version": "1.0.0",
   "description": "Transform the internet into a calm, distraction-free, neurodiverse-friendly environment. Built for users with ADHD, autism, dyslexia, and anyone seeking a more focused online experience.",
-  "permissions": [
-    "storage",
-    "activeTab",
-    "alarms",
-    "notifications",
-    "<all_urls>"
-  ],
+  "permissions": ["storage", "activeTab", "alarms", "notifications"],
   "background": {
-    "scripts": ["background/background.js"],
-    "persistent": false
+    "service_worker": "background/background.js"
   },
   "content_scripts": [
     {
@@ -22,26 +15,33 @@
       "run_at": "document_start"
     }
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "popup/popup.html",
     "default_title": "FocusFlow - Toggle Focus Mode",
     "default_icon": {
-      "16": "icons/icon-16.svg",
-      "32": "icons/icon-32.svg",
-      "48": "icons/icon-48.svg",
-      "128": "icons/icon-128.svg"
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
     }
   },
   "options_page": "options/options.html",
   "icons": {
-    "16": "icons/icon-16.svg",
-    "32": "icons/icon-32.svg",
-    "48": "icons/icon-48.svg",
-    "128": "icons/icon-128.svg"
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
   },
   "web_accessible_resources": [
     {
-      "resources": ["styles/*", "icons/*"],
+      "resources": [
+        "styles/*",
+        "icons/*",
+        "icons/icon-16.png",
+        "icons/icon-32.png",
+        "icons/icon-48.png",
+        "icons/icon-128.png"
+      ],
       "matches": ["<all_urls>"]
     }
   ],
