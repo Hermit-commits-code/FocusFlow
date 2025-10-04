@@ -63,7 +63,7 @@ Transform the internet into a calm, distraction-free, neurodiverse-friendly envi
 ##### Enhanced Typography
 
 - ✅ Google Fonts integration for better font selection
-- [ ] Advanced spacing controls (word spacing, paragraph spacing)
+- ✅ Advanced spacing controls (word spacing, paragraph spacing)
 - [ ] Reading guides and focus indicators
 - [ ] Text justification and alignment options
 

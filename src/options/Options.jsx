@@ -31,6 +31,8 @@ const DEFAULT_SETTINGS = {
     dyslexiaFriendlyFont: false,
     highContrast: false,
     reducedMotion: false,
+    wordSpacing: 0,
+    paragraphSpacing: 0,
   },
   layoutSettings: {
     maxContentWidth: 800,
@@ -488,6 +490,31 @@ const Options = () => {
                     min={-2}
                     max={5}
                     step={0.5}
+                  />
+                  <NumberSetting
+                    label="Word Spacing"
+                    description="Space between words in pixels"
+                    value={settings.accessibilitySettings.wordSpacing}
+                    onChange={(value) =>
+                      updateSetting("accessibilitySettings.wordSpacing", value)
+                    }
+                    min={0}
+                    max={10}
+                    step={0.5}
+                  />
+                  <NumberSetting
+                    label="Paragraph Spacing"
+                    description="Space between paragraphs in em units"
+                    value={settings.accessibilitySettings.paragraphSpacing}
+                    onChange={(value) =>
+                      updateSetting(
+                        "accessibilitySettings.paragraphSpacing",
+                        value
+                      )
+                    }
+                    min={0}
+                    max={5}
+                    step={0.1}
                   />
                 </SettingGroup>
 

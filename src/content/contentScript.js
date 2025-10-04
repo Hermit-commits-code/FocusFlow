@@ -31,6 +31,14 @@ class FocusFlowContentScript {
       this.blockAdIframes();
       this.stopAutoplayMedia();
     }
+
+    // Apply reading mode
+    if (
+      this.settings.layoutSettings &&
+      this.settings.layoutSettings.readingMode
+    ) {
+      this.enableReadingMode();
+    }
   }
   applySettings() {
     // Apply focus mode
@@ -210,6 +218,8 @@ class FocusFlowContentScript {
     this.simplifyNavigation();
     // Apply reading-friendly styles
     this.applyReadingStyles();
+    // Apply advanced spacing controls
+    this.applySpacingControls();
   }
 
   highlightMainContent() {
@@ -390,6 +400,7 @@ class FocusFlowContentScript {
         mainContent.appendChild(ttsBtn);
       }
       // Apply reading mode styles
+      this.applySpacingControls();
       if (!document.getElementById("focusflow-reading-mode-styles")) {
         const style = document.createElement("style");
         style.id = "focusflow-reading-mode-styles";
@@ -424,6 +435,18 @@ class FocusFlowContentScript {
         document.head.appendChild(style);
       }
     }
+  }
+
+  applySpacingControls() {
+    const mainContent = document.querySelector(".focusflow-main-content");
+    if (!mainContent || !this.settings.accessibilitySettings) return;
+    const { wordSpacing = 0, paragraphSpacing = 0 } =
+      this.settings.accessibilitySettings;
+    mainContent.style.wordSpacing = wordSpacing + "px";
+    // For paragraph spacing, set margin-bottom for <p> tags
+    mainContent.querySelectorAll("p").forEach((p) => {
+      p.style.marginBottom = paragraphSpacing + "em";
+    });
   }
 
   readAloud(element) {

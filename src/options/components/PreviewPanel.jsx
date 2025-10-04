@@ -26,6 +26,7 @@ const PreviewPanel = ({ settings }) => {
         : accessibilitySettings.fontFamily,
       lineHeight: accessibilitySettings.lineHeight,
       letterSpacing: `${accessibilitySettings.letterSpacing}px`,
+      wordSpacing: `${accessibilitySettings.wordSpacing || 0}px`,
       filter: accessibilitySettings.highContrast ? "contrast(150%)" : "none",
       transition: accessibilitySettings.reducedMotion
         ? "none"
@@ -49,12 +50,26 @@ const PreviewPanel = ({ settings }) => {
           <p style={{ color: "inherit", opacity: 0.8, fontSize: "0.9em" }}>
             Published on October 4, 2025
           </p>
-          <p style={{ color: "inherit" }}>
+          <p
+            style={{
+              color: "inherit",
+              marginBottom: `${
+                settings.accessibilitySettings?.paragraphSpacing || 0
+              }em`,
+            }}
+          >
             This is a preview of how text will appear with your current
             settings. The font size, family, spacing, and theme colors are all
             applied in real-time as you make changes.
           </p>
-          <p style={{ color: "inherit" }}>
+          <p
+            style={{
+              color: "inherit",
+              marginBottom: `${
+                settings.accessibilitySettings?.paragraphSpacing || 0
+              }em`,
+            }}
+          >
             FocusFlow helps reduce visual overwhelm and cognitive load by
             providing customizable typography and color schemes designed for
             neurodiverse users.

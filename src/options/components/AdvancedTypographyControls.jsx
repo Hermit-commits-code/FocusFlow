@@ -245,6 +245,66 @@ const AdvancedTypographyControls = ({ settings, updateSetting }) => {
       <div className="setting-row">
         <div className="range-setting">
           <label className="setting-label">
+            Word Spacing
+            <span className="setting-description">
+              Adjust space between words for easier reading
+            </span>
+          </label>
+          <div className="range-input-group">
+            <input
+              type="range"
+              min="0"
+              max="2"
+              step="0.1"
+              value={settings.accessibilitySettings?.wordSpacing || 0}
+              onChange={(e) =>
+                updateSetting(
+                  "accessibilitySettings.wordSpacing",
+                  parseFloat(e.target.value)
+                )
+              }
+              className="range-input"
+            />
+            <span className="range-value">
+              {settings.accessibilitySettings?.wordSpacing || 0}px
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div className="setting-row">
+        <div className="range-setting">
+          <label className="setting-label">
+            Paragraph Spacing
+            <span className="setting-description">
+              Adjust space between paragraphs for better separation
+            </span>
+          </label>
+          <div className="range-input-group">
+            <input
+              type="range"
+              min="0"
+              max="3"
+              step="0.1"
+              value={settings.accessibilitySettings?.paragraphSpacing || 0}
+              onChange={(e) =>
+                updateSetting(
+                  "accessibilitySettings.paragraphSpacing",
+                  parseFloat(e.target.value)
+                )
+              }
+              className="range-input"
+            />
+            <span className="range-value">
+              {settings.accessibilitySettings?.paragraphSpacing || 0}em
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div className="setting-row">
+        <div className="range-setting">
+          <label className="setting-label">
             Content Width
             <span className="setting-description">
               Narrower content reduces visual overwhelm
