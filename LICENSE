@@ -1,0 +1,109 @@
+MIT License
+
+Copyright (c) 2025 FocusFlow Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Third-Party Licenses and Acknowledgments
+
+This project makes use of several open-source libraries and resources:
+
+### React
+
+- License: MIT
+- Copyright (c) Facebook, Inc. and its affiliates
+- Used for building the user interface components
+
+### OpenDyslexic Font
+
+- License: SIL Open Font License 1.1
+- Copyright (c) 2019 Abbie Gonzalez
+- Used to provide dyslexia-friendly typography option
+- Font files are loaded from Google Fonts CDN with user consent
+
+### Chrome Extension APIs
+
+- Copyright (c) Google Inc.
+- Used under the Chrome Extension Developer Terms
+
+### Firefox WebExtension APIs
+
+- Copyright (c) Mozilla Foundation
+- Used under the Mozilla Public License 2.0
+
+### Icons and Graphics
+
+- All icons are custom-created or sourced from public domain resources
+- Emoji characters are provided by the system and Unicode Consortium
+
+## Privacy and Data Handling
+
+This extension is designed with privacy as a core principle:
+
+- **No Data Collection**: FocusFlow does not collect, store, or transmit personal browsing data
+- **Local Storage Only**: All user settings and preferences are stored locally on the user's device
+- **No Analytics**: No usage analytics or tracking are implemented
+- **No Third-Party Services**: The extension operates independently without external service dependencies
+- **Minimal Permissions**: Only requests browser permissions necessary for core functionality
+
+## Accessibility Commitment
+
+FocusFlow is committed to providing an accessible experience for all users:
+
+- **WCAG 2.1 AA Compliance**: All interfaces meet or exceed accessibility standards
+- **Screen Reader Support**: Full compatibility with assistive technologies
+- **Keyboard Navigation**: Complete functionality available via keyboard
+- **High Contrast Support**: Built-in high contrast modes for visual accessibility
+- **Cognitive Accessibility**: Designed specifically for neurodiverse users
+
+## Community and Contributions
+
+This software is developed by and for the neurodiverse community:
+
+- **Open Source**: Full source code is publicly available for review and contribution
+- **Community Input**: Feature development is guided by user feedback and needs
+- **Inclusive Development**: Development team includes neurodiverse developers and accessibility experts
+- **Research Collaboration**: Working with academic institutions and disability organizations
+
+## Disclaimer
+
+This software is provided as an accessibility tool and is not a medical device or treatment. While designed to assist users with ADHD, autism, dyslexia, and other neurodivergent conditions, it should not be considered a substitute for professional medical advice, diagnosis, or treatment.
+
+Users should:
+
+- Consult with healthcare providers regarding their specific needs
+- Use the software as a supplementary tool alongside other appropriate interventions
+- Report any adverse effects or issues through the project's issue tracking system
+
+## Contact Information
+
+For questions about this license or the software:
+
+- GitHub: https://github.com/focusflow/focusflow-extension
+- Email: legal@focusflow.app
+
+For privacy concerns:
+
+- Email: privacy@focusflow.app
+
+For accessibility issues:
+
+- Email: accessibility@focusflow.app

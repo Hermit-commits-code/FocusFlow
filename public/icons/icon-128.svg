@@ -1,0 +1,63 @@
+<!-- FocusFlow Icon SVG (128x128) -->
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Complex gradient background -->
+  <defs>
+    <radialGradient id="grad128" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </radialGradient>
+    <filter id="shadow128" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="4" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Main circle with shadow -->
+  <circle cx="64" cy="64" r="56" fill="url(#grad128)" stroke="#1d4ed8" stroke-width="4" filter="url(#shadow128)"/>
+  
+  <!-- Brain hemispheres -->
+  <path d="M28 45c0-8 6-12 12-12s12 4 12 12 6 12 12 12 12-4 12-12" 
+        fill="none" stroke="white" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M28 83c0 8 6 12 12 12s12-4 12-8-6-12 12-12 12 4 12 8" 
+        fill="none" stroke="white" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
+  
+  <!-- Central processing area -->
+  <ellipse cx="64" cy="64" rx="18" ry="12" fill="none" stroke="white" stroke-width="3" opacity="0.7"/>
+  <ellipse cx="64" cy="64" rx="12" ry="8" fill="none" stroke="white" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Neural network nodes -->
+  <circle cx="40" cy="48" r="3" fill="white" opacity="0.9"/>
+  <circle cx="64" cy="64" r="4" fill="white"/>
+  <circle cx="88" cy="80" r="3" fill="white" opacity="0.9"/>
+  <circle cx="42" cy="82" r="2.5" fill="white" opacity="0.8"/>
+  <circle cx="86" cy="46" r="2.5" fill="white" opacity="0.8"/>
+  <circle cx="64" cy="45" r="2" fill="white" opacity="0.7"/>
+  <circle cx="64" cy="83" r="2" fill="white" opacity="0.7"/>
+  <circle cx="50" cy="64" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="78" cy="64" r="1.5" fill="white" opacity="0.6"/>
+  
+  <!-- Neural connections -->
+  <line x1="40" y1="48" x2="64" y2="64" stroke="white" stroke-width="2" opacity="0.6"/>
+  <line x1="64" y1="64" x2="88" y2="80" stroke="white" stroke-width="2" opacity="0.6"/>
+  <line x1="42" y1="82" x2="64" y2="64" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <line x1="86" y1="46" x2="64" y2="64" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <line x1="64" y1="45" x2="64" y2="64" stroke="white" stroke-width="1" opacity="0.4"/>
+  <line x1="64" y1="83" x2="64" y2="64" stroke="white" stroke-width="1" opacity="0.4"/>
+  <line x1="50" y1="64" x2="64" y2="64" stroke="white" stroke-width="1" opacity="0.4"/>
+  <line x1="78" y1="64" x2="64" y2="64" stroke="white" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Focus rings -->
+  <circle cx="64" cy="64" r="48" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+  <circle cx="64" cy="64" r="40" fill="none" stroke="white" stroke-width="0.5" opacity="0.2"/>
+  
+  <!-- Text elements for store listing -->
+  <text x="64" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white" opacity="0.8">FocusFlow</text>
+</svg>

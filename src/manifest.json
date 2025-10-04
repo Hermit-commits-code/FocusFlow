@@ -1,0 +1,71 @@
+{
+  "manifest_version": 2,
+  "name": "FocusFlow - Neurodiverse-Friendly Browsing",
+  "version": "1.0.0",
+  "description": "Transform the internet into a calm, distraction-free, neurodiverse-friendly environment. Built for users with ADHD, autism, dyslexia, and anyone seeking a more focused online experience.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "alarms",
+    "notifications",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/contentScript.js"],
+      "css": ["styles/content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "FocusFlow - Toggle Focus Mode",
+    "default_icon": {
+      "16": "icons/icon-16.svg",
+      "32": "icons/icon-32.svg",
+      "48": "icons/icon-48.svg",
+      "128": "icons/icon-128.svg"
+    }
+  },
+  "options_page": "options/options.html",
+  "icons": {
+    "16": "icons/icon-16.svg",
+    "32": "icons/icon-32.svg",
+    "48": "icons/icon-48.svg",
+    "128": "icons/icon-128.svg"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["styles/*", "icons/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "commands": {
+    "toggle-focus-mode": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "Toggle Focus Mode"
+    },
+    "toggle-distraction-blocker": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D",
+        "mac": "Command+Shift+D"
+      },
+      "description": "Toggle Distraction Blocker"
+    },
+    "start-break-timer": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+B",
+        "mac": "Command+Shift+B"
+      },
+      "description": "Start Break Timer"
+    }
+  }
+}

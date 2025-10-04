@@ -1,0 +1,14 @@
+<!-- FocusFlow Icon SVG (16x16) -->
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="8" cy="8" r="7" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1"/>
+  
+  <!-- Brain icon representation -->
+  <path d="M5 6c0-1 .5-1.5 1.5-1.5S8 5 8 6s.5 1.5 1.5 1.5S11 6.5 11 6" 
+        fill="none" stroke="white" stroke-width="1" stroke-linecap="round"/>
+  <path d="M5 10c0 1 .5 1.5 1.5 1.5S8 11 8 10s.5-1.5 1.5-1.5S11 9.5 11 10" 
+        fill="none" stroke="white" stroke-width="1" stroke-linecap="round"/>
+  
+  <!-- Focus dot -->
+  <circle cx="8" cy="8" r="1" fill="white"/>
+</svg>
